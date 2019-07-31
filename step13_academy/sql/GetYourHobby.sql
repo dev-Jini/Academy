@@ -23,9 +23,9 @@ CREATE TABLE academy
 (
 	academy_id   number             PRIMARY KEY,
 	title        varchar2(30 char)  NOT NULL,
-	sitelink     varchar2(50 char),
+	sitelink     varchar2(150 char),
 	contact      varchar2(15 char),
-	address      varchar2(100 char)
+	address      varchar2(150 char)
 );
 
 
