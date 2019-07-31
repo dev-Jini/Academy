@@ -1,0 +1,2 @@
+insert into academy values(academy_id.nextval,'요가학원', 'http://www.yoga.com/', '02-2400-8303', '서울시 송파구 위례순환로 364');
+insert into academy values(academy_id.nextval,'수영학원', 'http://www.swimming.com/', '02-2400-8303', '서울시 송파구 위례순환로 364');
