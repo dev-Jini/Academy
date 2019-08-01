@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AcademyDTO {
+	private double academy_id;
 	private String title;
 	private String sitelink;
 	private String contact;

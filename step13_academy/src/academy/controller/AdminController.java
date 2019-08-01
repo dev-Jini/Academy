@@ -16,9 +16,9 @@ public class AdminController {
 	
 	private AcademyService service = AcademyService.getInstance();
 	
-	public void addAcademy(JSONArray jsonitems_array) {
+	public void addAllAcademy(JSONArray jsonitems_array) {
 		try {
-			service.addAcademy(jsonitems_array);
+			service.addAllAcademy(jsonitems_array);
 			EndView.successView("Academy Add ¼º°ø");
 		} catch (SQLException e) {
 			e.printStackTrace();

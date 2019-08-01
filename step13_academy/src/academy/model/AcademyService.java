@@ -19,8 +19,8 @@ public class AcademyService {
 //		AcademyDTO 
 //	}
 	//새로운 academy 저장
-	public static boolean addAcademy(JSONArray jsonitems_array) throws SQLException{
-		return AcademyDAO.addAcademy(jsonitems_array);
+	public static boolean addAllAcademy(JSONArray jsonitems_array) throws SQLException{
+		return AcademyDAO.addAllAcademy(jsonitems_array);
 	}
 	
 }
