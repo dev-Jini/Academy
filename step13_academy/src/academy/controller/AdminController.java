@@ -1,10 +1,12 @@
 package academy.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 
 import academy.model.AcademyService;
+import academy.model.dto.AcademyDTO;
 import academy.view.EndView;
 
 public class AdminController {
@@ -16,9 +18,9 @@ public class AdminController {
 	
 	private AcademyService service = AcademyService.getInstance();
 	
-	public void addAllAcademy(JSONArray jsonitems_array) {
+	public void addAllAcademy(ArrayList<AcademyDTO> academies) {
 		try {
-			service.addAllAcademy(jsonitems_array);
+			service.addAllAcademy(academies);
 			EndView.successView("Academy Add ¼º°ø");
 		} catch (SQLException e) {
 			e.printStackTrace();

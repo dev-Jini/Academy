@@ -1,6 +1,7 @@
 package academy.model;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 
@@ -19,8 +20,8 @@ public class AcademyService {
 //		AcademyDTO 
 //	}
 	//새로운 academy 저장
-	public static boolean addAllAcademy(JSONArray jsonitems_array) throws SQLException{
-		return AcademyDAO.addAllAcademy(jsonitems_array);
+	public static boolean addAllAcademy(ArrayList<AcademyDTO> academies) throws SQLException{
+		return AcademyDAO.addAllAcademy(academies);
 	}
 	
 }

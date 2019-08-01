@@ -13,4 +13,13 @@ public class AcademyDTO {
 	private String sitelink;
 	private String contact;
 	private String address;
+	private String sb_name;
+	public AcademyDTO(String title, String sitelink, String contact, String address, String sb_name) {
+		this.title = title;
+		this.sitelink = sitelink;
+		this.contact = contact;
+		this.address = address;
+		this.sb_name = sb_name;
+	}
+	
 }

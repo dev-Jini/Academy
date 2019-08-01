@@ -16,19 +16,23 @@ import academy.model.util.DBUtil;
 public class AcademyDAO {
 	
 	// 네이버 API 데이터 전체 저장
-	public static boolean addAllAcademy(JSONArray jsonitems_array) throws SQLException {
+	public static boolean addAllAcademy(ArrayList<AcademyDTO> academies) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		AcademyDTO academy = null;
 		try{
-			con = DBUtil.getConnection();
-			
-		    for (int i = 0; i < jsonitems_array.size(); i++) { 	
-				JSONObject jsonobjectitems = ((JSONObject)jsonitems_array.get(i));
-				pstmt = con.prepareStatement("insert into academy values(academy_id.nextval, ?, ?, ?, ?)");
-				pstmt.setString(1, jsonobjectitems.get("title").toString());
-				pstmt.setString(2, jsonobjectitems.get("link").toString());
-				pstmt.setString(3, jsonobjectitems.get("telephone").toString());
-				pstmt.setString(4, jsonobjectitems.get("address").toString());
+			academy = new AcademyDTO();
+		    for (int i = 0; i < academies.size(); i++) { 	
+		    	con = DBUtil.getConnection();
+		    	
+		    	academy = academies.get(i);
+		    	
+				pstmt = con.prepareStatement("insert into academy values(academy_id.nextval, ?, ?, ?, ?, ?)");
+				pstmt.setString(1, academy.getTitle());
+				pstmt.setString(2, academy.getSitelink());
+				pstmt.setString(3, academy.getContact());
+				pstmt.setString(4, academy.getAddress());
+				pstmt.setString(5, academy.getSb_name());
 				try {						
 					Thread.sleep(50);							// 오류 방지
 				} catch (InterruptedException e) {
@@ -37,6 +41,8 @@ public class AcademyDAO {
 				int result = pstmt.executeUpdate();
 				
 				if(result == 1){
+					System.out.println(i + "  ");
+					DBUtil.close(con, pstmt);					// 이렇게 해도 되나요?
 //					return true;
 				}
 		    }
@@ -52,11 +58,12 @@ public class AcademyDAO {
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("insert into academy values(academy_id.nextval, ?, ?, ?, ?)");
+			pstmt = con.prepareStatement("insert into academy values(academy_id.nextval, ?, ?, ?, ?, ?)");
 			pstmt.setString(1, academy.getTitle());
 			pstmt.setString(2, academy.getSitelink());
 			pstmt.setString(3, academy.getContact());
 			pstmt.setString(4, academy.getAddress());
+			pstmt.setString(5, academy.getSb_name());
 			
 			int result = pstmt.executeUpdate();
 			if(result == 1) {
@@ -71,14 +78,14 @@ public class AcademyDAO {
 	
 	// 수정
 	// contact, sitelink, address 추가 구현
-	public static boolean updateAcademy(String academy_id, String major) throws SQLException {
+	public static boolean updateAcademy(String academy_id, String title) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
 
 			pstmt = con.prepareStatement("update academy set title=? where academy_id=?");
-			pstmt.setString(1, major);
+			pstmt.setString(1, title);
 			pstmt.setString(2, academy_id);
 
 			int result = pstmt.executeUpdate();
@@ -122,7 +129,7 @@ public class AcademyDAO {
 			pstmt.setString(1, academy_id);
 			rset = pstmt.executeQuery();
 			if (rset.next()) {
-				academy = new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5));	
+				academy = new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getString(6));	
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
@@ -132,7 +139,7 @@ public class AcademyDAO {
 
 	// ???모든 기부자 검색해서 반환
 	// sql - select * from activist
-	public static ArrayList<AcademyDTO> getAllActivists() throws SQLException {
+	public static ArrayList<AcademyDTO> getAllAcademies() throws SQLException {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rset = null;
@@ -144,7 +151,7 @@ public class AcademyDAO {
 			
 			list = new ArrayList<AcademyDTO>();
 			while(rset.next()) {
-				list.add(new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5)));
+				list.add(new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getString(6)));
 			}
 		} finally {
 			DBUtil.close(con, stmt, rset);
