@@ -39,8 +39,7 @@ CREATE TABLE student
 (
 	st_id number PRIMARY KEY,
 	st_name varchar2(20 char) NOT NULL,
-	gender varchar2(1 char) NOT NULL,
-	phoneNo number,
+	gender varchar2(2 char) NOT NULL,
 	academy_id number
 );
 

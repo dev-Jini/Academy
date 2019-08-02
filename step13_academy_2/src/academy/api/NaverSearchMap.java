@@ -32,6 +32,7 @@ public class NaverSearchMap {
 		String apiURL ="https://openapi.naver.com/v1/search/local";
 		
 		try {
+			System.out.println("NAVER 지도 API - " + query + " 검색 시도...");
 			for(int i = 1; i < total; i+=30) {
 				start = String.valueOf(i);
 				String text = URLEncoder.encode(query, "UTF-8");
@@ -48,14 +49,13 @@ public class NaverSearchMap {
 		        Object obj;
 		        
 		        JSONParser parser = new JSONParser();
-		        
 		        if (responseCode == 200) {
-					System.out.println("성공코드 " + i + " 발생");
+					System.out.println("성공코드 " + (i-1) + " 발생");
 					Thread.sleep(200);							// 오류 방지
 					obj = parser.parse(new InputStreamReader(con.getInputStream(), "utf-8"));
 					
 				} else { 		// 에러 발생시 예외 처리
-					System.out.println("Error" + i + " 발생");
+					System.out.println("Error" + responseCode + " 발생");
 					obj = parser.parse(new InputStreamReader(con.getErrorStream(), "utf-8"));
 				}
 		        

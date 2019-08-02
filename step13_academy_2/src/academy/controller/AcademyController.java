@@ -85,12 +85,14 @@ public class AcademyController {
 		ArrayList<StudentDTO> allStudents = null;
 		try{
 			allStudents = service.getAllStudents();	
-			EndView.successView("=================== 모든 아카데미 검색 성공 ===================");
+			EndView.successView("=================== 모든 학생 명단 성공 ===================");
 			EndView.allListsView(allStudents);
 		}catch(SQLException s){
 			s.printStackTrace();
-			EndView.showError("모든 프로젝트 검색시 에러 발생");
+			EndView.showError("모든 학생 명단 검색시 에러 발생");
 		}
 	}
+	
+	// 특정 학생 추가
 	
 }

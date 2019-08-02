@@ -26,7 +26,7 @@ public class AcademyService {
 		ArrayList<AcademyDTO> academies = null;
 		
 		jsonItems_array = naver.getAcademy(query);
-		String sb_name = query.substring(7);
+		String sb_name = query.substring(3);
 		
 		academies = new ArrayList<AcademyDTO>();
 		for (int i = 0; i < jsonItems_array.size(); i++) { 	

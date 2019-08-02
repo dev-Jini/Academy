@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import academy.model.dto.StudentDTO;
+import academy.model.dto.SubjectDTO;
 import academy.model.util.DBUtil;
 
 public class StudentDAO {
@@ -18,10 +19,9 @@ public class StudentDAO {
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("insert into student values(st_id.nextval, ?, ?, ?");
+			pstmt = con.prepareStatement("insert into student values(st_id.nextval, ?, ?");
 			pstmt.setString(1, student.getSt_name());
 			pstmt.setString(2, student.getGender());
-			pstmt.setDouble(3, student.getPhoneNumber());
 			
 			int result = pstmt.executeUpdate();
 			if(result == 1) {
@@ -118,11 +118,12 @@ public class StudentDAO {
 			
 			students = new ArrayList<StudentDTO>();
 			while(rset.next()) {
-				students.add(new StudentDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getInt(4), rset.getDouble(5)));
+				students.add(new StudentDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getDouble(4)));
 			}
 		} finally {
 			DBUtil.close(con, stmt, rset);
 		}
 		return students;
 	}
+	
 }

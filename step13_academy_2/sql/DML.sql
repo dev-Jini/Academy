@@ -24,38 +24,50 @@ insert into subject values(sb_no.nextval, '±âÅ¸', 'À½¾Ç');
 
 /*student Á¤º¸ */
 
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'ÃÖ¼º±¹', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'À¯Àº³ª', 'F', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '¼ÛÆòÇö', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±èÁ¾¼º', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '°­¹Î¿õ', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '¼Û½ÃÂù', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'º¯¿µÀÎ', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '¼­ÇØ»ó', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'Á¶ÇöÈñ', 'F', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±èµ¿¹ü', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±è°æ¿ø', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'ÁöÀÎÃ¶', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±èµ¿¼º', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±èÁøÈÖ', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'ÀÌÁ¤¿ø', 'F', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '¹ÚÇö¹Î', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±è¿õÅÂ', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'ÀÌÇöÁØ', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '½Å¿ë±â', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'ÇÑ¿ì¼®', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'Á¶¿µ¿í', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '¼®À¯Áø', 'F', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '³²¼¼¿µ', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±è¼ö°æ', 'F', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, '±èÇı°æ', 'F', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'µ¿ºó³ª', 'M', '01000000000');
-insert into student (st_id , st_name, gender, phoneNo) values(st_id.nextval, 'ÀÌ°íÀ×', 'M', '01000000000');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'ÃÖ¼º±¹', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'À¯Àº³ª', 'F');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '¼ÛÆòÇö', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±èÁ¾¼º', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '°­¹Î¿õ', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '¼Û½ÃÂù', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'º¯¿µÀÎ', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '¼­ÇØ»ó', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'Á¶ÇöÈñ', 'F');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±èµ¿¹ü', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±è°æ¿ø', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'ÁöÀÎÃ¶', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±èµ¿¼º', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±èÁøÈÖ', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'ÀÌÁ¤¿ø', 'F');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '¹ÚÇö¹Î', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±è¿õÅÂ', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'ÀÌÇöÁØ', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '½Å¿ë±â', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'ÇÑ¿ì¼®', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'Á¶¿µ¿í', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '¼®À¯Áø', 'F');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '³²¼¼¿µ', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±è¼ö°æ', 'F');
+insert into student (st_id , st_name, gender) values(st_id.nextval, '±èÇı°æ', 'F');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'µ¿ºó³ª', 'M');
+insert into student (st_id , st_name, gender) values(st_id.nextval, 'ÀÌ°íÀ×', 'M');
+insert into academy values(3179, 'Encore', 'http://www.en-core.com/', '02-754-7301', '¼­¿ï½Ã ¼­ÃÊ±¸ ¼­ÃÊ´ë·Î 46±æ 42 ¿£ÄÚ¾ÆÅ¸¿ö', '7');
+
+/* */
+
+insert into subject 
+	select sb_no.nextval, sb_name
+	from (select distinct sb_name
+			from academy where sb_name is not null) 
+	where sb_name is not null;
 
 
+update academy a
+		set sb_no = 
+					(select s.sb_no 
+					from subject s
+					where a.sb_name = s.sb_name);
+	
+ALTER TABLE academy DROP COLUMN sb_name;
 
-insert all 
-into subcademy (sb_no, academy_id) values(sb_no, academy_id) 
-select sb_no, academy_id
-from subject, academy
-where subject.sb_name = academy.sb_name and ;
+update student set academy_id = 85 where st_name = '±èµ¿¼º';

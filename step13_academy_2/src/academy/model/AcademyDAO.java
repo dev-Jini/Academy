@@ -42,11 +42,12 @@ public class AcademyDAO {
 				int result = pstmt.executeUpdate();
 				
 				if(result == 1){
-					System.out.println( (i+1) + "  ");
+					System.out.print( (i+1) + "  ");
 					DBUtil.close(con, pstmt);					// 이렇게 해도 되나요?
 //					return true;
 				}
 		    }
+		    System.out.println();
 		}finally{
 			DBUtil.close(con, pstmt);
 		}
