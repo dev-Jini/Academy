@@ -50,12 +50,12 @@ public class NaverSearchMap {
 		        JSONParser parser = new JSONParser();
 		        
 		        if (responseCode == 200) {
-					System.out.println("성공코드 " + responseCode + " 발생");
+					System.out.println("성공코드 " + i + " 발생");
 					Thread.sleep(200);							// 오류 방지
 					obj = parser.parse(new InputStreamReader(con.getInputStream(), "utf-8"));
 					
 				} else { 		// 에러 발생시 예외 처리
-					System.out.println("Error" + responseCode + " 발생");
+					System.out.println("Error" + i + " 발생");
 					obj = parser.parse(new InputStreamReader(con.getErrorStream(), "utf-8"));
 				}
 		        

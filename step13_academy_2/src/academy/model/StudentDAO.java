@@ -34,7 +34,7 @@ public class StudentDAO {
 	}
 	
 	// 수정  -- 점검 필요
-	public static boolean updateStudent(double st_id, Object obj) throws SQLException {
+	public static boolean updateStudent(int st_id, Object obj) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -43,16 +43,16 @@ public class StudentDAO {
 				if(((String) obj).length() == 1) {
 					pstmt = con.prepareStatement("update student set gender = ? where st_id = ?");
 					pstmt.setString(1, obj.toString());
-					pstmt.setDouble(2, st_id);
+					pstmt.setInt(2, st_id);
 				} else {
 					pstmt = con.prepareStatement("update student set st_name = ? where st_id = ?");
 					pstmt.setString(1, obj.toString());
-					pstmt.setDouble(2, st_id);
+					pstmt.setInt(2, st_id);
 				}
 			} else {
 				pstmt = con.prepareStatement("update student set phoneNo = ? where st_id = ?");
-				pstmt.setDouble(1, (Double)obj);
-				pstmt.setDouble(2, st_id);
+				pstmt.setInt(1, (Integer) obj);
+				pstmt.setInt(2, st_id);
 			}
 			
 			int result = pstmt.executeUpdate();
@@ -85,7 +85,7 @@ public class StudentDAO {
 	}
 	
 	// 특정 검색
-	public static StudentDTO getStudent(double st_id) throws SQLException {
+	public static StudentDTO getStudent(int st_id) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -97,7 +97,7 @@ public class StudentDAO {
 			
 			rset = pstmt.executeQuery();
 			if(rset.next()) {
-				student = new StudentDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getDouble(4));
+				student = new StudentDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getInt(4));
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
@@ -116,8 +116,9 @@ public class StudentDAO {
 			stmt = con.createStatement();
 			rset = stmt.executeQuery("select * from student");
 			
+			students = new ArrayList<StudentDTO>();
 			while(rset.next()) {
-				students.add(new StudentDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getDouble(4)));
+				students.add(new StudentDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getInt(4), rset.getDouble(5)));
 			}
 		} finally {
 			DBUtil.close(con, stmt, rset);

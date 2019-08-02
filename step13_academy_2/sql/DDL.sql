@@ -10,14 +10,15 @@ DROP TABLE subject CASCADE CONSTRAINTS;
 /* Drop Sequences */
 
 DROP SEQUENCE academy_id;
-
-
+DROP SEQUENCE st_id;
+DROP SEQUENCE sb_no;
 
 
 /* Create Sequences */
 
 CREATE SEQUENCE academy_id INCREMENT BY 1 START WITH 1;
-
+CREATE SEQUENCE st_id INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE sb_no INCREMENT BY 1 START WITH 1;
 
 
 /* Create Tables */
@@ -30,7 +31,7 @@ CREATE TABLE academy
 	contact varchar2(15 char),
 	address varchar2(150),
 	sb_name varchar2(30) NOT NULL,
-	sb_no number NOT NULL
+	sb_no number
 );
 
 
@@ -40,15 +41,14 @@ CREATE TABLE student
 	st_name varchar2(20 char) NOT NULL,
 	gender varchar2(1 char) NOT NULL,
 	phoneNo number,
-	academy_id number NOT NULL
+	academy_id number
 );
 
 
 CREATE TABLE subject
 (
 	sb_no number PRIMARY KEY,
-	sb_name varchar2(30 char) NOT NULL UNIQUE,
-	sb_category varchar2(10 char) NOT NULL
+	sb_name varchar2(30 char) NOT NULL UNIQUE
 );
 
 
@@ -65,6 +65,16 @@ ALTER TABLE academy
 	ADD FOREIGN KEY (sb_no)
 	REFERENCES subject (sb_no)
 ;
+
+
+
+
+
+
+
+
+
+
 
 
 

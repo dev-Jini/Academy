@@ -27,14 +27,14 @@ public class AcademyDAO {
 		    	
 		    	academy = academies.get(i);
 		    	
-				pstmt = con.prepareStatement("insert into academy values(?, ?, ?, ?, ?, ?)");
-				pstmt.setDouble(1, academy.getAcademy_id());
-				pstmt.setString(2, academy.getTitle());
-				pstmt.setString(3, academy.getSitelink());
-				pstmt.setString(4, academy.getContact());
-				pstmt.setString(5, academy.getAddress());
-				pstmt.setString(6, academy.getSb_name());
-				try {						
+				pstmt = con.prepareStatement("insert into academy (academy_id, title, sitelink, contact, address, sb_name)"
+						 + "values(academy_id.nextval, ?, ?, ?, ?, ?)");
+				pstmt.setString(1, academy.getTitle());
+				pstmt.setString(2, academy.getSitelink());
+				pstmt.setString(3, academy.getContact());
+				pstmt.setString(4, academy.getAddress());
+				pstmt.setString(5, academy.getSb_name());
+				try {					
 					Thread.sleep(50);							// 오류 방지
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class AcademyDAO {
 				int result = pstmt.executeUpdate();
 				
 				if(result == 1){
-					System.out.println(i + "  ");
+					System.out.println( (i+1) + "  ");
 					DBUtil.close(con, pstmt);					// 이렇게 해도 되나요?
 //					return true;
 				}
@@ -144,20 +144,65 @@ public class AcademyDAO {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rset = null;
-		ArrayList<AcademyDTO> list = null;
+		ArrayList<AcademyDTO> academies = null;
 		try{
 			con = DBUtil.getConnection();
 			stmt = con.createStatement();
 			rset = stmt.executeQuery("select * from academy");
 			
-			list = new ArrayList<AcademyDTO>();
+			academies = new ArrayList<AcademyDTO>();
 			while(rset.next()) {
-				list.add(new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getString(6)));
+				academies.add(new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getString(6)));
 			}
 		} finally {
 			DBUtil.close(con, stmt, rset);
 		}
-		return list;
+		return academies;
+	}
+	
+	// 특정 과목
+	public static ArrayList<AcademyDTO> getSpecificAcademies(String sb_name) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<AcademyDTO> academies = null;
+		try{
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement("select * from academy a where a.sb_no =  (select sb_no from subject where sb_name = ?)");
+			pstmt.setString(1, sb_name);
+			
+			rset = pstmt.executeQuery();
+			academies = new ArrayList<AcademyDTO>();
+			while(rset.next()) {
+				academies.add(new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getString(6)));
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return academies;
+	}
+	
+	// 특정 과목 & 지역
+	public static ArrayList<AcademyDTO> getSpecificAcademies2(String sb_name, String loc) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<AcademyDTO> academies = null;
+		try{
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement("select * from academy a where a.sb_no =  (select sb_no from subject where sb_name = ?) and address like ?");
+			pstmt.setString(1, sb_name);
+			pstmt.setString(2, "%"+loc+"%");
+
+			rset = pstmt.executeQuery();
+			academies = new ArrayList<AcademyDTO>();
+			while(rset.next()) {
+				academies.add(new AcademyDTO(rset.getDouble(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getDouble(6)));
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return academies;
 	}
 }
 	

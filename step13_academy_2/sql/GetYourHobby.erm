@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2019-07-27 22:14:05</creation_date>
-			<updated_date>2019-08-02 09:19:42</updated_date>
+			<updated_date>2019-08-02 12:08:07</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -250,22 +250,6 @@
 		</word>
 		<word>
 			<id>5</id>
-			<length>10</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>true</char_semantics>
-			<description></description>
-			<logical_name>영역</logical_name>
-			<physical_name>sb_category</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>6</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -281,7 +265,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>7</id>
+			<id>6</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -297,7 +281,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>8</id>
+			<id>7</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -313,7 +297,7 @@
 			<type>decimal</type>
 		</word>
 		<word>
-			<id>9</id>
+			<id>8</id>
 			<length>200</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -329,7 +313,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>10</id>
+			<id>9</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -345,7 +329,7 @@
 			<type>decimal</type>
 		</word>
 		<word>
-			<id>11</id>
+			<id>10</id>
 			<length>20</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -361,7 +345,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>12</id>
+			<id>11</id>
 			<length>150</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -382,12 +366,12 @@
 	<contents>
 		<table>
 			<id>0</id>
-			<height>126</height>
+			<height>100</height>
 			<width>299</width>
 				<font_name>맑은 고딕</font_name>
 				<font_size>9</font_size>
 			<x>48</x>
-			<y>196</y>
+			<y>209</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -403,7 +387,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>8</word_id>
+					<word_id>7</word_id>
 					<id>0</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -436,7 +420,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>6</word_id>
+					<word_id>5</word_id>
 					<id>1</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -450,39 +434,6 @@
 					<not_null>true</not_null>
 					<primary_key>false</primary_key>
 					<unique_key>true</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>5</word_id>
-					<id>2</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
 					<character_set></character_set>
 					<collation></collation>
 					<sequence>
@@ -538,7 +489,7 @@
 							<b>0</b>
 						</color>
 					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
+					<parent_cardinality>0..1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
 					<name></name>
 					<on_delete_action>RESTRICT</on_delete_action>
@@ -556,7 +507,7 @@
 			<columns>
 				<normal_column>
 					<word_id>0</word_id>
-					<id>3</id>
+					<id>2</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -588,8 +539,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>12</word_id>
-					<id>4</id>
+					<word_id>11</word_id>
+					<id>3</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -621,8 +572,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>9</word_id>
-					<id>5</id>
+					<word_id>8</word_id>
+					<id>4</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -655,7 +606,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>2</word_id>
-					<id>6</id>
+					<id>5</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -688,7 +639,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>1</word_id>
-					<id>7</id>
+					<id>6</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -720,8 +671,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>7</word_id>
-					<id>8</id>
+					<word_id>6</word_id>
+					<id>7</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -753,7 +704,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>9</id>
+					<id>8</id>
 					<referenced_column>0</referenced_column>
 					<relation>0</relation>
 					<description></description>
@@ -765,9 +716,9 @@
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
 					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
+					<not_null>false</not_null>
 					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<character_set></character_set>
 					<collation></collation>
 					<sequence>
@@ -823,7 +774,7 @@
 							<b>0</b>
 						</color>
 					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
+					<parent_cardinality>0..1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
 					<name></name>
 					<on_delete_action>RESTRICT</on_delete_action>
@@ -840,8 +791,8 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>10</word_id>
-					<id>10</id>
+					<word_id>9</word_id>
+					<id>9</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -873,8 +824,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>11</word_id>
-					<id>11</id>
+					<word_id>10</word_id>
+					<id>10</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -907,7 +858,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>3</word_id>
-					<id>12</id>
+					<id>11</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -940,7 +891,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>4</word_id>
-					<id>13</id>
+					<id>12</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -972,8 +923,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>14</id>
-					<referenced_column>3</referenced_column>
+					<id>13</id>
+					<referenced_column>2</referenced_column>
 					<relation>1</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -984,9 +935,9 @@
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
 					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
+					<not_null>false</not_null>
 					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<character_set></character_set>
 					<collation></collation>
 					<sequence>
@@ -1026,50 +977,54 @@
 					<direct_test_data>
 						<data>
 							<column_data>
-								<column_id>3</column_id>
+								<column_id>2</column_id>
 								<value>11</value>
 							</column_data>
 							<column_data>
-								<column_id>4</column_id>
+								<column_id>3</column_id>
 								<value>요가라테스 시청종각점요가라테스 시청종각점</value>
 							</column_data>
 							<column_data>
-								<column_id>5</column_id>
+								<column_id>4</column_id>
 								<value>http://blog.naver.com/yogalates_cityhall</value>
 							</column_data>
 							<column_data>
-								<column_id>6</column_id>
+								<column_id>5</column_id>
 								<value>02-318-0015</value>
 							</column_data>
 							<column_data>
-								<column_id>7</column_id>
+								<column_id>6</column_id>
 								<value>서울특별시 중구 다동 170-1 5층</value>
 							</column_data>
 							<column_data>
-								<column_id>8</column_id>
+								<column_id>7</column_id>
 								<value></value>
 							</column_data>
 							<column_data>
-								<column_id>9</column_id>
+								<column_id>8</column_id>
 								<value></value>
 							</column_data>
 						</data>
 						<data>
 							<column_data>
-								<column_id>3</column_id>
+								<column_id>2</column_id>
 								<value>21</value>
 							</column_data>
 							<column_data>
-								<column_id>4</column_id>
+								<column_id>3</column_id>
 								<value>문단열의 아이스펀지잉글리쉬 관악어학원</value>
 							</column_data>
 							<column_data>
-								<column_id>5</column_id>
+								<column_id>4</column_id>
 								<value>http://www.ispongeenglish.com/gwanak/</value>
 							</column_data>
 							<column_data>
-								<column_id>6</column_id>
+								<column_id>5</column_id>
 								<value>02-733-1205</value>
+							</column_data>
+							<column_data>
+								<column_id>6</column_id>
+								<value></value>
 							</column_data>
 							<column_data>
 								<column_id>7</column_id>
@@ -1077,10 +1032,6 @@
 							</column_data>
 							<column_data>
 								<column_id>8</column_id>
-								<value></value>
-							</column_data>
-							<column_data>
-								<column_id>9</column_id>
 								<value></value>
 							</column_data>
 						</data>
@@ -1089,7 +1040,7 @@
 						<test_data_num>0</test_data_num>
 						<data_def_list>
 							<data_def>
-								<column_id>3</column_id>
+								<column_id>2</column_id>
 								<type>format</type>
 								<repeat_num>1</repeat_num>
 								<template>%</template>
@@ -1104,7 +1055,7 @@
 								</modified_values>
 							</data_def>
 							<data_def>
-								<column_id>4</column_id>
+								<column_id>3</column_id>
 								<type>format</type>
 								<repeat_num>1</repeat_num>
 								<template>academy 이름_%</template>
@@ -1119,7 +1070,7 @@
 								</modified_values>
 							</data_def>
 							<data_def>
-								<column_id>5</column_id>
+								<column_id>4</column_id>
 								<type>format</type>
 								<repeat_num>1</repeat_num>
 								<template>인터넷 주소_%</template>
@@ -1134,7 +1085,7 @@
 								</modified_values>
 							</data_def>
 							<data_def>
-								<column_id>6</column_id>
+								<column_id>5</column_id>
 								<type>format</type>
 								<repeat_num>1</repeat_num>
 								<template>연락처_%</template>
@@ -1149,7 +1100,7 @@
 								</modified_values>
 							</data_def>
 							<data_def>
-								<column_id>7</column_id>
+								<column_id>6</column_id>
 								<type>format</type>
 								<repeat_num>1</repeat_num>
 								<template>address_%</template>
@@ -1164,7 +1115,7 @@
 								</modified_values>
 							</data_def>
 							<data_def>
-								<column_id>8</column_id>
+								<column_id>7</column_id>
 								<type>format</type>
 								<repeat_num>1</repeat_num>
 								<template>과목명_%</template>
@@ -1179,7 +1130,7 @@
 								</modified_values>
 							</data_def>
 							<data_def>
-								<column_id>9</column_id>
+								<column_id>8</column_id>
 								<type>foreign.key</type>
 								<repeat_num>1</repeat_num>
 								<template>%</template>
@@ -1212,10 +1163,6 @@
 								<column_id>1</column_id>
 								<value>요가</value>
 							</column_data>
-							<column_data>
-								<column_id>2</column_id>
-								<value>스포츠</value>
-							</column_data>
 						</data>
 						<data>
 							<column_data>
@@ -1225,10 +1172,6 @@
 							<column_data>
 								<column_id>1</column_id>
 								<value>영어회화</value>
-							</column_data>
-							<column_data>
-								<column_id>2</column_id>
-								<value>어학</value>
 							</column_data>
 						</data>
 					</direct_test_data>
@@ -1262,21 +1205,6 @@
 								<select>카테고리명_2</select>
 								<select>카테고리명_3</select>
 								<select>카테고리명_4</select>
-								<modified_values>
-								</modified_values>
-							</data_def>
-							<data_def>
-								<column_id>2</column_id>
-								<type>format</type>
-								<repeat_num>1</repeat_num>
-								<template>영역_%</template>
-								<from>1</from>
-								<to>100</to>
-								<increment>1</increment>
-								<select>영역_1</select>
-								<select>영역_2</select>
-								<select>영역_3</select>
-								<select>영역_4</select>
 								<modified_values>
 								</modified_values>
 							</data_def>

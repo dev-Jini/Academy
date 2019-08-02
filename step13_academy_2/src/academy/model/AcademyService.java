@@ -2,16 +2,16 @@ package academy.model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import academy.api.NaverSearchMap;
 import academy.model.dto.AcademyDTO;
+import academy.model.dto.StudentDTO;
+import academy.model.dto.SubjectDTO;
 
-public class AcademyService implements Comparator<AcademyDTO> {
+public class AcademyService {
 
 	private static AcademyService instance = new AcademyService();
 	private AcademyService() { }
@@ -24,8 +24,8 @@ public class AcademyService implements Comparator<AcademyDTO> {
 	public boolean addAllAcademy(String query) throws SQLException {
 		JSONArray jsonItems_array = null;
 		ArrayList<AcademyDTO> academies = null;
-		jsonItems_array = naver.getAcademy(query);
 		
+		jsonItems_array = naver.getAcademy(query);
 		String sb_name = query.substring(7);
 		
 		academies = new ArrayList<AcademyDTO>();
@@ -35,20 +35,7 @@ public class AcademyService implements Comparator<AcademyDTO> {
         			jsonobjectitems.get("telephone").toString(), jsonobjectitems.get("address").toString(), sb_name));
         }
 		
-		academies = sortAcademy(academies);
-		
 		return AcademyDAO.addAllAcademy(academies);
-	}
-	
-	public ArrayList<AcademyDTO> sortAcademy(ArrayList<AcademyDTO> academies) {
-		ArrayList<AcademyDTO> academiseSorted = new ArrayList<AcademyDTO>();
-		AcademyService comparator = AcademyService.getInstance();
-		Collections.sort(academies, comparator);
-		for (int j = 0; j < academies.size(); j++) {
-			academiseSorted.add(new AcademyDTO(j, academies.get(j)));
-		}
-		
-		return academiseSorted;
 	}
 	
 	//Academy - CRUD
@@ -61,12 +48,21 @@ public class AcademyService implements Comparator<AcademyDTO> {
 //		return AcademyDAO.addAllAcademy(academies);
 //	}
 	
-	
-	
-	
-	@Override
-	public int compare(AcademyDTO o1, AcademyDTO o2) {
-		return o2.getTitle().compareTo(o1.getTitle());
+	public static ArrayList<AcademyDTO> getAllAcademies() throws SQLException{
+		return AcademyDAO.getAllAcademies();
 	}
+	public static ArrayList<AcademyDTO> getSpecificAcademies(String sb_name) throws SQLException{
+		return AcademyDAO.getSpecificAcademies(sb_name);
+	}
+	public static ArrayList<AcademyDTO> getSpecificAcademies2(String sb_name, String loc) throws SQLException{
+		return AcademyDAO.getSpecificAcademies2(sb_name, loc);
+	}
+	public static ArrayList<SubjectDTO> getAllSubjects() throws SQLException{
+		return SubjectDAO.getAllSubject();
+	}
+	public static ArrayList<StudentDTO> getAllStudents() throws SQLException{
+		return StudentDAO.getAllStudents();
+	}
+	
 	
 }
