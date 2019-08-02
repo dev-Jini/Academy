@@ -18,9 +18,9 @@ public class AdminController {
 	
 	private AcademyService service = AcademyService.getInstance();
 	
-	public void addAllAcademy(ArrayList<AcademyDTO> academies) {
+	public void addAllAcademy(String query) {
 		try {
-			service.addAllAcademy(academies);
+			service.addAllAcademy(query);
 			EndView.successView("Academy Add ¼º°ø");
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -27,12 +27,13 @@ public class AcademyDAO {
 		    	
 		    	academy = academies.get(i);
 		    	
-				pstmt = con.prepareStatement("insert into academy values(academy_id.nextval, ?, ?, ?, ?, ?)");
-				pstmt.setString(1, academy.getTitle());
-				pstmt.setString(2, academy.getSitelink());
-				pstmt.setString(3, academy.getContact());
-				pstmt.setString(4, academy.getAddress());
-				pstmt.setString(5, academy.getSb_name());
+				pstmt = con.prepareStatement("insert into academy values(?, ?, ?, ?, ?, ?)");
+				pstmt.setDouble(1, academy.getAcademy_id());
+				pstmt.setString(2, academy.getTitle());
+				pstmt.setString(3, academy.getSitelink());
+				pstmt.setString(4, academy.getContact());
+				pstmt.setString(5, academy.getAddress());
+				pstmt.setString(6, academy.getSb_name());
 				try {						
 					Thread.sleep(50);							// 오류 방지
 				} catch (InterruptedException e) {

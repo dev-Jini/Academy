@@ -12,16 +12,13 @@ public class AdminStartView {
 
 	public static void main(String[] args) {
 		AdminController controller = AdminController.getInstance();
-		NaverSearchMap naver = NaverSearchMap.getInstance();
-		
-		ArrayList<AcademyDTO> academies1 = naver.getAcademy("서울 복싱");
-		ArrayList<AcademyDTO> academies2 = naver.getAcademy("서울 주짓수");
-		ArrayList<AcademyDTO> academies3 = naver.getAcademy("서울 크로스핏");
-		
+//		NaverSearchMap naver = NaverSearchMap.getInstance();
+//		
+//		ArrayList<AcademyDTO> academies1 = naver.getAcademy("서울 어학원 영어회화");
+//		ArrayList<AcademyDTO> academies2 = naver.getAcademy("서울 어학원 토익");
 		
 		System.out.println("************Academy 정보 ADD ALL************");
-		controller.addAllAcademy(academies1);
-		controller.addAllAcademy(academies2);
-		controller.addAllAcademy(academies3);
+//		controller.addAllAcademy("서울 어학원 영어회화");
+		controller.addAllAcademy("서울 어학원 토익");
 	}
 }
