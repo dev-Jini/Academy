@@ -32,22 +32,14 @@ public class SubjectDAO {
    }
       
    // 수정  과목 no를 활용해서 과목 이름, 카테고리 수정
-   public static boolean updateSubject(int sb_no, String str, String str2) throws SQLException {
+   public static boolean updateSubject(int sb_no, String str) throws SQLException {
       Connection con = null;
       PreparedStatement pstmt = null;
       try {
          con = DBUtil.getConnection();
-         if(str2.equals("subject")) {
-             pstmt = con.prepareStatement("update student set sb_name = ? where sb_no = ?");
-             pstmt.setString(1, str);
-             pstmt.setDouble(2, sb_no);
-          } else if(str2.equals("category")) {
-             pstmt = con.prepareStatement("update student set sb_category = ? where sb_no = ?");
-             pstmt.setString(1, str);
-             pstmt.setDouble(2, sb_no);
-          } else {
-        	  return false;
-          }
+         pstmt = con.prepareStatement("update student set sb_name = ? where sb_no = ?");
+         pstmt.setString(1, str);
+         pstmt.setDouble(2, sb_no);
          
          int result = pstmt.executeUpdate();
          if(result == 1) {

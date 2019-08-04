@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import academy.model.dto.StudentDTO;
-import academy.model.dto.SubjectDTO;
 import academy.model.util.DBUtil;
 
 public class StudentDAO {
@@ -50,11 +49,10 @@ public class StudentDAO {
 					pstmt.setInt(2, st_id);
 				}
 			} else {
-				pstmt = con.prepareStatement("update student set phoneNo = ? where st_id = ?");
-				pstmt.setInt(1, (Integer) obj);
+				pstmt = con.prepareStatement("update student set academy_id = ? where st_id = ?");
+				pstmt.setDouble(1, (Integer) obj);
 				pstmt.setInt(2, st_id);
 			}
-			
 			int result = pstmt.executeUpdate();
 			if(result == 1) {
 				return true;
@@ -66,7 +64,7 @@ public class StudentDAO {
 	}
 	
 	// ªË¡¶
-	public static boolean deleteStudent(double st_id) throws SQLException {
+	public static boolean deleteStudent(int st_id) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {

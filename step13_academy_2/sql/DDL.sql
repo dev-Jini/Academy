@@ -67,13 +67,3 @@ ALTER TABLE academy
 
 
 
-
-
-
-
-
-
-
-
-
-
