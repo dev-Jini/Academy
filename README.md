@@ -4,7 +4,7 @@
 
 원하는 검색어로 네이버 지도 API에서 받아온 정보를 특정 과목, 특정 지역으로 필터링하여 출력할 수 있게 기능을 추가함.
 
-# Skill sets
+## Skill sets
 ```
 * RDBMS : Oracle
 * Back End Development Languages : Java / SQL
@@ -17,7 +17,7 @@
 
 Filtering information from Naver map API by specific subject, area.
 
-# Skill sets
+## Skill sets
 ```
 * RDBMS : Oracle
 * Back End Development Languages : Java / SQL
