@@ -1,6 +1,6 @@
 # Academy
 
-## Naver 지도 API를 이용한 "학원 검색 프로젝트".
+## Naver 지도 API를 이용한 "학원 검색 프로젝트"
 
 원하는 검색어로 네이버 지도 API에서 받아온 정보를 특정 과목, 특정 지역으로 필터링하여 출력할 수 있게 기능을 추가함.
 
@@ -13,7 +13,7 @@
 ```
 =====================================================
 
-## "Academy Searching Project" Feat. Naver map API.
+## "Academy Searching Project" Feat. Naver map API
 
 Filtering information from Naver map API by specific subject, area.
 
